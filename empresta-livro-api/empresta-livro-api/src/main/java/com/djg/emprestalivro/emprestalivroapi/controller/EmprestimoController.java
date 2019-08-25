@@ -2,6 +2,7 @@ package com.djg.emprestalivro.emprestalivroapi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.djg.emprestalivro.emprestalivroapi.servico.EmprestimoServico;
@@ -14,7 +15,7 @@ public class EmprestimoController {
 	private EmprestimoServico emprestimoServico;
 	
 	@PostMapping("/emprestimo")
-	public void salvaEmprestimo(EmprestimoVO emprestimo) {
+	public void salvaEmprestimo(@RequestBody EmprestimoVO emprestimo) {
 		emprestimoServico.salvaEmprestimo(emprestimo);
 	}
 
